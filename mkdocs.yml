@@ -1,0 +1,110 @@
+site_name: Dexter Documentation
+site_description: Dexter — a high-performance Pokemon GO alert system for Discord and Telegram
+site_url: https://pbx.github.io/dexterWiki/
+repo_url: https://github.com/pbx/dexterWiki
+repo_name: dexterWiki
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Installation:
+      - installation/index.md
+      - From Source: installation/source.md
+      - Docker: installation/docker.md
+      - Basic Configuration: installation/configuration.md
+      - Discord Bot Setup: installation/discord-bot.md
+      - Telegram Bot Setup: installation/telegram-bot.md
+      - Scanner Setup: installation/scanner.md
+      - Data Generator: installation/data-generator.md
+  - Configuration:
+      - configuration/index.md
+      - Config Reference: configuration/config-reference.md
+      - Discord: configuration/discord.md
+      - Telegram: configuration/telegram.md
+      - Alert Templates (DTS): configuration/alert-templates.md
+      - Advanced DTS: configuration/alert-templates-advanced.md
+      - Static Maps: configuration/static-maps.md
+      - Geocoding: configuration/geocoding.md
+      - Languages: configuration/languages.md
+      - Scheduling & Profiles: configuration/scheduling.md
+      - PvP Tracking: configuration/pvp.md
+      - Area Security: configuration/area-security.md
+      - Weather Forecast: configuration/weather-forecast.md
+      - Shortlinks: configuration/shortlinks.md
+  - Commands:
+      - commands/index.md
+      - /pokemon: commands/pokemon.md
+      - /raid: commands/raid.md
+      - /quest: commands/quest.md
+      - /maxbattle: commands/maxbattle.md
+      - /rocket: commands/rocket.md
+      - /gym: commands/gym.md
+      - /nest: commands/nest.md
+      - /weather: commands/weather.md
+      - /lure: commands/lure.md
+      - /fort: commands/fort.md
+      - /pokestop-event: commands/pokestop-event.md
+      - /profile: commands/profile.md
+      - /filters: commands/filters.md
+      - /info: commands/info.md
+      - Admin Commands: commands/admin.md
+  - Operation:
+      - operation/index.md
+      - Rate Limits: operation/rate-limits.md
+      - Quest Digest: operation/quest-digest.md
+      - Raid RSVP: operation/raid-rsvp.md
+      - Logs: operation/logs.md
+      - FAQ: operation/faq.md
+  - API:
+      - api/index.md
+      - Configuration: api/config.md
+      - Geofence: api/geofence.md
+      - Humans: api/humans.md
+  - Migration from PoracleJS: migration.md
