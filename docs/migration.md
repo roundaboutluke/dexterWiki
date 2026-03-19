@@ -69,7 +69,7 @@ Dexter has full slash command support. If migrating from a PoracleJS setup that 
 
 ## DTS Templates
 
-Dexter's DTS system is compatible with PoracleJS templates. Your existing `config/dts.json` should work as-is.
+Dexter's DTS system is compatible with PoracleJS templates. Your existing `config/dts.json` should work as-is, though note that there may be some slight differences in new lines after handlebars are processed.
 
 ### New DTS Helpers
 
