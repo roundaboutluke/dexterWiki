@@ -14,16 +14,7 @@ Each user can have multiple named profiles, each with its own:
 
 ### Managing Profiles
 
-Use the `/profile` slash command:
-
-| Command | Description |
-|---------|-------------|
-| `/profile` | Show current active profile |
-| `/profile switch` | Switch to a different profile |
-| `/profile location set` | Set location for current profile |
-| `/profile area add` | Add an area to current profile |
-| `/profile area remove` | Remove an area from current profile |
-| `/profile area list` | List areas in current profile |
+Use the `/profile` slash command or legacy !profile command.
 
 ## Active Hours
 
@@ -43,17 +34,7 @@ This is the opposite of setting "quiet hours": you define when you **do** want a
 
 ### Setting Active Hours
 
-Use `/profile schedule` to manage active hours:
-
-| Command | Description |
-|---------|-------------|
-| `/profile schedule` | Show current schedule status |
-| `/profile schedule enable` | Enable the scheduler |
-| `/profile schedule disable` | Disable the scheduler (use preferred profile) |
-| `/profile schedule add` | Add an active hours window to a profile |
-| `/profile schedule edit` | Edit an existing schedule entry |
-| `/profile schedule remove` | Remove a schedule entry |
-| `/profile schedule clear` | Clear all schedules from a profile |
+Use /profile to configure schedules and profiles interactively in Discord.
 
 ### Schedule Format
 
@@ -70,7 +51,7 @@ Examples:
 
 ### Scheduler Disabled Mode
 
-When the scheduler is disabled (`/profile schedule disable`), Dexter uses your **preferred profile** at all times — no time-based switching occurs. This is the default state for users who don't need scheduling.
+When the scheduler is disabled, Dexter uses your **preferred profile** at all times — no time-based switching occurs. This is the default state for users who don't setup scheduling.
 
 ## Quest Digest
 
