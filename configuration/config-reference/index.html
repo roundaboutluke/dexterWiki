@@ -1,0 +1,4312 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Dexter — a high-performance Pokemon GO alert system for Discord and Telegram">
+      
+      
+      
+        <link rel="canonical" href="https://pbx.github.io/dexterWiki/configuration/config-reference/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../discord/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Config Reference - Dexter Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#config-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dexter Documentation" class="md-header__button md-logo" aria-label="Dexter Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dexter Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Config Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pbx/dexterWiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dexterWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/" class="md-tabs__link">
+          
+  
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../commands/" class="md-tabs__link">
+          
+  
+  
+  Commands
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operation/" class="md-tabs__link">
+          
+  
+  
+  Operation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../migration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Migration from PoracleJS
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dexter Documentation" class="md-nav__button md-logo" aria-label="Dexter Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dexter Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pbx/dexterWiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dexterWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/discord-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord Bot Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/telegram-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telegram Bot Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scanner Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/data-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        general
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        discord
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="discord">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iv-colour-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV Colour Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#telegram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        telegram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geocoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        geocoding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="geocoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tileserversettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tileserverSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tracking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pvp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tuning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geofence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        geofence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        weather
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alertlimits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        alertLimits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#areasecurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        areaSecurity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reconciliation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="reconciliation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reconciliationdiscord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reconciliation.discord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconciliationtelegram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reconciliation.telegram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fallbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fallbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telegram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telegram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alert-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert Templates (DTS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alert-templates-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced DTS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geocoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geocoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scheduling & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pvp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PvP Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../area-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weather-forecast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weather Forecast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shortlinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortlinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commands
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/pokemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /pokemon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/raid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /raid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/quest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /quest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/maxbattle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /maxbattle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/rocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /rocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/gym/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /gym
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/nest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /nest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/weather/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /weather
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/lure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /lure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/fort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /fort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/pokestop-event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /pokestop-event
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/rate-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quest-digest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quest Digest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/raid-rsvp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raid RSVP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geofence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geofence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/humans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Humans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration from PoracleJS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        general
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        discord
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="discord">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iv-colour-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV Colour Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#telegram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        telegram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geocoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        geocoding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="geocoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tileserversettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tileserverSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tracking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pvp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tuning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geofence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        geofence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        weather
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alertlimits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        alertLimits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#areasecurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        areaSecurity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reconciliation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="reconciliation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reconciliationdiscord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reconciliation.discord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconciliationtelegram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reconciliation.telegram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fallbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fallbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/pbx/dexterWiki/edit/main/docs/configuration/config-reference.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="config-reference">Config Reference<a class="headerlink" href="#config-reference" title="Permanent link">&para;</a></h1>
+<p>This is the complete reference for every setting in Dexter's <code>config/default.json</code>. You should never edit <code>default.json</code> directly -- instead, copy any sections you want to change into <code>config/local.json</code>. Dexter merges <code>local.json</code> on top of <code>default.json</code> at startup.</p>
+<div class="admonition tip">
+<p class="admonition-title">Validating your config</p>
+<p>After editing <code>local.json</code>, make sure it is valid JSON before starting Dexter. The default file uses cJSON-style comments which standard JSON linters will reject -- your <code>local.json</code> should be plain JSON without comments.</p>
+</div>
+<hr />
+<h2 id="server">server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h2>
+<p>Controls the webhook listener that receives data from your scanner.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td><code>"127.0.0.1"</code></td>
+<td>Interface to listen on. Use <code>127.0.0.1</code> for localhost only, or <code>0.0.0.0</code> to listen on all network interfaces.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>"3030"</code></td>
+<td>Port the webhook listener binds to.</td>
+</tr>
+<tr>
+<td><code>ipWhitelist</code></td>
+<td><code>[]</code></td>
+<td>Array of IP addresses allowed to send webhooks. Empty means all IPs are allowed (subject to blacklist).</td>
+</tr>
+<tr>
+<td><code>ipBlacklist</code></td>
+<td><code>[]</code></td>
+<td>Array of IP addresses blocked from sending webhooks.</td>
+</tr>
+<tr>
+<td><code>apiSecret</code></td>
+<td><code>""</code></td>
+<td>Secret token required to access the Dexter API. Leave blank to disable the API entirely.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="general">general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<p>Core runtime settings that affect how Dexter processes webhooks and generates alerts.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>environment</code></td>
+<td><code>"production"</code></td>
+<td>Runtime environment. Leave as <code>production</code> unless you are developing Dexter itself.</td>
+</tr>
+<tr>
+<td><code>alertMinimumTime</code></td>
+<td><code>120</code></td>
+<td>Minimum seconds remaining before despawn for an alert to fire. Events expiring sooner than this are silently dropped.</td>
+</tr>
+<tr>
+<td><code>ignoreLongRaids</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, raids longer than 47 minutes are ignored. Useful for suppressing spam during raid-hour or special events.</td>
+</tr>
+<tr>
+<td><code>imgUrl</code></td>
+<td><em>(UICONS repo URL)</em></td>
+<td>Base URL for the <code>{{imgUrl}}</code> DTS placeholder. Should point to a UICONS-compatible icon repository.</td>
+</tr>
+<tr>
+<td><code>imgUrlAlt</code></td>
+<td><code>""</code></td>
+<td>Secondary icon base URL exposed as <code>{{imgUrlAlt}}</code> in DTS.</td>
+</tr>
+<tr>
+<td><code>stickerUrl</code></td>
+<td><em>(Telegram UICONS repo)</em></td>
+<td>Base URL for <code>{{stickerUrl}}</code> in DTS, used for Telegram <code>.webp</code> stickers.</td>
+</tr>
+<tr>
+<td><code>images</code></td>
+<td><code>{}</code></td>
+<td>Per-type overrides for the UICONS icon repository. Keys are controller types: <code>monster</code>, <code>gym</code>, <code>nest</code>, <code>invasion</code>, <code>lure</code>, <code>quest</code>, <code>raid</code>, <code>weather</code>. Values are repository URLs.</td>
+</tr>
+<tr>
+<td><code>stickers</code></td>
+<td><code>{}</code></td>
+<td>Per-type overrides for the UICONS sticker repository (same key format as <code>images</code>).</td>
+</tr>
+<tr>
+<td><code>requestShinyImages</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, request shiny-variant icons from the UICONS repository.</td>
+</tr>
+<tr>
+<td><code>populatePokestopName</code></td>
+<td><code>false</code></td>
+<td><strong>(RDM only)</strong> Look up nearby Pokestop names in the scanner database for wild Pokemon encounters.</td>
+</tr>
+<tr>
+<td><code>locale</code></td>
+<td><code>"en"</code></td>
+<td>Default language for Dexter. Supported values include <code>en</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>ru</code>, and others with locale packs.</td>
+</tr>
+<tr>
+<td><code>disabledCommands</code></td>
+<td><code>[]</code></td>
+<td>Array of command names to disable (e.g. <code>["nest", "lure"]</code>). Disabled commands will not respond to users.</td>
+</tr>
+<tr>
+<td><code>disablePokemon</code></td>
+<td><code>false</code></td>
+<td>Disable processing of Pokemon webhooks entirely.</td>
+</tr>
+<tr>
+<td><code>disableRaid</code></td>
+<td><code>false</code></td>
+<td>Disable processing of raid webhooks.</td>
+</tr>
+<tr>
+<td><code>disablePokestop</code></td>
+<td><code>false</code></td>
+<td>Disable processing of Pokestop webhooks. On RDM/Golbat this also disables invasion processing.</td>
+</tr>
+<tr>
+<td><code>disableInvasion</code></td>
+<td><code>false</code></td>
+<td>Disable processing of invasion webhooks.</td>
+</tr>
+<tr>
+<td><code>disableLure</code></td>
+<td><code>false</code></td>
+<td>Disable processing of lure webhooks.</td>
+</tr>
+<tr>
+<td><code>disableQuest</code></td>
+<td><code>false</code></td>
+<td>Disable processing of quest webhooks.</td>
+</tr>
+<tr>
+<td><code>disableWeather</code></td>
+<td><code>false</code></td>
+<td>Disable processing of weather webhooks.</td>
+</tr>
+<tr>
+<td><code>disableNest</code></td>
+<td><code>false</code></td>
+<td>Disable processing of nest webhooks.</td>
+</tr>
+<tr>
+<td><code>disableGym</code></td>
+<td><code>false</code></td>
+<td>Disable processing of gym webhooks.</td>
+</tr>
+<tr>
+<td><code>disableFortUpdate</code></td>
+<td><code>false</code></td>
+<td>Disable processing of fort-update webhooks.</td>
+</tr>
+<tr>
+<td><code>processConfirmedInvasionLineups</code></td>
+<td><code>false</code></td>
+<td><strong>(Golbat)</strong> Process confirmed invasion lineup data from Golbat webhooks.</td>
+</tr>
+<tr>
+<td><code>disableUnconfirmedInvasion</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, only process invasions that have confirmed lineup data.</td>
+</tr>
+<tr>
+<td><code>roleCheckMode</code></td>
+<td><code>"ignore"</code></td>
+<td>Action to take when a user loses their required role. <code>"ignore"</code> -- log only. <code>"delete"</code> -- remove user and all trackings from the database. <code>"disable-user"</code> -- disable the user (preserving trackings) and re-enable if the role is restored.</td>
+</tr>
+<tr>
+<td><code>availableLanguages</code></td>
+<td><code>{}</code></td>
+<td>Explicit allowlist of languages users can switch to with the <code>!language</code> command. When empty, Dexter auto-discovers languages from locale packs. See <a href="../languages/">Languages</a> for details.</td>
+</tr>
+<tr>
+<td><code>defaultTemplateName</code></td>
+<td><code>1</code></td>
+<td>Default DTS template ID or name assigned to new trackings.</td>
+</tr>
+<tr>
+<td><code>dtsDictionary</code></td>
+<td><code>{}</code></td>
+<td>Library of custom DTS template snippets available in alert templates.</td>
+</tr>
+<tr>
+<td><code>shortlinkProvider</code></td>
+<td><code>"hideuri"</code></td>
+<td>URL shortener provider. Supported: <code>hideuri</code>, <code>shlink</code>, <code>yourls</code>.</td>
+</tr>
+<tr>
+<td><code>shortlinkProviderURL</code></td>
+<td><code>""</code></td>
+<td>Base URL for self-hosted shortlink providers (Shlink, YOURLS).</td>
+</tr>
+<tr>
+<td><code>shortlinkProviderKey</code></td>
+<td><code>""</code></td>
+<td>API key for the shortlink provider.</td>
+</tr>
+<tr>
+<td><code>shortlinkProviderDomain</code></td>
+<td><code>""</code></td>
+<td>Custom domain for the shortlink provider, if supported.</td>
+</tr>
+<tr>
+<td><code>rdmURL</code></td>
+<td><code>""</code></td>
+<td>Base URL for RDM map links in DTS (e.g. <code>https://myRDM.com/</code>).</td>
+</tr>
+<tr>
+<td><code>reactMapURL</code></td>
+<td><code>""</code></td>
+<td>Base URL for ReactMap links in DTS (e.g. <code>https://myReactMap.com/</code>).</td>
+</tr>
+<tr>
+<td><code>diademURL</code></td>
+<td><code>""</code></td>
+<td>Base URL for Diadem links in DTS (e.g. <code>https://myDiadem.com/</code>). Do not include <code>/map</code>.</td>
+</tr>
+<tr>
+<td><code>rocketMadURL</code></td>
+<td><code>""</code></td>
+<td>Base URL for RocketMAD links in DTS (e.g. <code>https://myRocketMAD.com/</code>).</td>
+</tr>
+<tr>
+<td><code>timezoneDbPath</code></td>
+<td><code>""</code></td>
+<td>Base path for the timezone database file (without extension). Required for per-location timezone lookups used by scheduling. Leave blank to disable.</td>
+</tr>
+<tr>
+<td><code>timezoneDbType</code></td>
+<td><code>"boltdb"</code></td>
+<td>Timezone database backend type.</td>
+</tr>
+<tr>
+<td><code>timezoneDbEncoding</code></td>
+<td><code>"msgpack"</code></td>
+<td>Encoding format for timezone database entries.</td>
+</tr>
+<tr>
+<td><code>timezoneDbSnappy</code></td>
+<td><code>true</code></td>
+<td>Whether to use Snappy compression for the timezone database.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="database">database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
+<p>Database connection settings for Dexter's own database and optional scanner database access.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>client</code></td>
+<td><code>"mysql"</code></td>
+<td>Database driver. Must be <code>mysql</code> (covers both MySQL and MariaDB). SQLite is no longer supported.</td>
+</tr>
+<tr>
+<td><code>conn.host</code></td>
+<td><code>"127.0.0.1"</code></td>
+<td>Dexter database hostname.</td>
+</tr>
+<tr>
+<td><code>conn.database</code></td>
+<td><code>"poracle"</code></td>
+<td>Dexter database name.</td>
+</tr>
+<tr>
+<td><code>conn.user</code></td>
+<td><code>"poracleuser"</code></td>
+<td>Dexter database username.</td>
+</tr>
+<tr>
+<td><code>conn.password</code></td>
+<td><code>"poraclepassword"</code></td>
+<td>Dexter database password.</td>
+</tr>
+<tr>
+<td><code>conn.port</code></td>
+<td><code>3306</code></td>
+<td>Dexter database port.</td>
+</tr>
+<tr>
+<td><code>scannerType</code></td>
+<td><code>"none"</code></td>
+<td>Scanner database type. Supported: <code>none</code>, <code>golbat</code>, <code>rdm</code>, <code>mad</code>.</td>
+</tr>
+<tr>
+<td><code>scanner.host</code></td>
+<td><code>"127.0.0.1"</code></td>
+<td>Scanner database hostname.</td>
+</tr>
+<tr>
+<td><code>scanner.database</code></td>
+<td><code>"scannerdb"</code></td>
+<td>Scanner database name.</td>
+</tr>
+<tr>
+<td><code>scanner.user</code></td>
+<td><code>"scanneruser"</code></td>
+<td>Scanner database username.</td>
+</tr>
+<tr>
+<td><code>scanner.password</code></td>
+<td><code>"scannerpassword"</code></td>
+<td>Scanner database password.</td>
+</tr>
+<tr>
+<td><code>scanner.port</code></td>
+<td><code>3306</code></td>
+<td>Scanner database port.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Change the default database credentials before running Dexter in production.</p>
+</div>
+<hr />
+<h2 id="discord">discord<a class="headerlink" href="#discord" title="Permanent link">&para;</a></h2>
+<p>Discord bot configuration. See also the dedicated <a href="../discord/">Discord</a> page for setup instructions.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td><code>true</code></td>
+<td>Whether the Discord bot is enabled.</td>
+</tr>
+<tr>
+<td><code>activity</code></td>
+<td><code>"Dexter"</code></td>
+<td>Status activity text shown on the primary bot.</td>
+</tr>
+<tr>
+<td><code>workerStatus</code></td>
+<td><code>"invisible"</code></td>
+<td>Online status for worker bots. Options: <code>available</code>, <code>dnd</code>, <code>idle</code>, <code>invisible</code>.</td>
+</tr>
+<tr>
+<td><code>workerActivity</code></td>
+<td><code>"Dexter Helper"</code></td>
+<td>Status activity text shown on worker bots.</td>
+</tr>
+<tr>
+<td><code>disableAutoGreetings</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, suppress the automatic welcome DM when a user gains a qualifying role.</td>
+</tr>
+<tr>
+<td><code>uploadEmbedImages</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, download images and upload them directly to Discord's CDN instead of linking external URLs.</td>
+</tr>
+<tr>
+<td><code>disableCommandResponses</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, suppress bot replies to legacy <code>!</code> commands. Useful when another tool provides command responses.</td>
+</tr>
+<tr>
+<td><code>slash.disabled</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, do not register or handle Discord slash commands. Use this if another application shares the same bot token.</td>
+</tr>
+<tr>
+<td><code>slash.deregisterOnStart</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, delete all registered global slash commands on startup for a clean reinstall.</td>
+</tr>
+<tr>
+<td><code>slash.hideTemplateOptions</code></td>
+<td><code>true</code></td>
+<td>When <code>true</code>, hide the "template" option from Discord slash command forms.</td>
+</tr>
+<tr>
+<td><code>checkRole</code></td>
+<td><code>false</code></td>
+<td>Periodically verify that all registered Discord users still hold a qualifying role. Requires <code>general.roleCheckMode</code> to control the action taken.</td>
+</tr>
+<tr>
+<td><code>checkRoleInterval</code></td>
+<td><code>6</code></td>
+<td>Hours between automated role checks.</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>[""]</code></td>
+<td>Array of Discord bot tokens. The first token is used as the command controller; additional tokens are worker bots for sending messages.</td>
+</tr>
+<tr>
+<td><code>guilds</code></td>
+<td><code>[""]</code></td>
+<td>Array of Discord guild (server) IDs that Dexter operates in.</td>
+</tr>
+<tr>
+<td><code>channels</code></td>
+<td><code>[""]</code></td>
+<td>Array of channel IDs where users can register with Dexter. Not used in area-security mode.</td>
+</tr>
+<tr>
+<td><code>userRole</code></td>
+<td><code>[""]</code></td>
+<td>Array of role IDs that automatically grant Dexter access. Not used in area-security mode.</td>
+</tr>
+<tr>
+<td><code>admins</code></td>
+<td><code>[""]</code></td>
+<td>Array of Discord user IDs with administrator privileges (can run <code>!channel add</code> and other admin commands).</td>
+</tr>
+<tr>
+<td><code>delegatedAdministration</code></td>
+<td><code>{}</code></td>
+<td>Grant specific users admin rights over specific channels or webhooks. See example below.</td>
+</tr>
+<tr>
+<td><code>commandSecurity</code></td>
+<td><code>{}</code></td>
+<td>Restrict specific commands to certain user or role IDs. See example below.</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td><code>"!"</code></td>
+<td>Command prefix for legacy text commands.</td>
+</tr>
+<tr>
+<td><code>ivColors</code></td>
+<td><em>(see below)</em></td>
+<td>Array of six hex colour codes for IV tiers, from worst to best.</td>
+</tr>
+<tr>
+<td><code>dmLogChannelID</code></td>
+<td><code>""</code></td>
+<td>Channel ID to log all user commands to. Leave blank to disable.</td>
+</tr>
+<tr>
+<td><code>dmLogChannelDeletionTime</code></td>
+<td><code>0</code></td>
+<td>Minutes after which logged command messages are deleted. <code>0</code> disables deletion.</td>
+</tr>
+<tr>
+<td><code>messageDeleteDelay</code></td>
+<td><code>0</code></td>
+<td>Extra delay in milliseconds before cleaning up command-response messages.</td>
+</tr>
+<tr>
+<td><code>unrecognisedCommandMessage</code></td>
+<td><code>""</code></td>
+<td>Custom reply for unrecognised commands sent in DM.</td>
+</tr>
+<tr>
+<td><code>unregisteredUserMessage</code></td>
+<td><code>""</code></td>
+<td>Custom reply for unregistered users who DM the bot.</td>
+</tr>
+<tr>
+<td><code>lostRoleMessage</code></td>
+<td><code>""</code></td>
+<td>Custom DM sent to a user when they lose their qualifying role.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>Delegated Administration</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;delegatedAdministration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;channelTracking&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;channel-or-guild-or-category-id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;admin-user-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;webhookTracking&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;webhook-name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;admin-user-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Command Security</summary>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;commandSecurity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;monster&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;user-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;role-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;pvp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;role-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</code></pre></div>
+Valid command names include: <code>monster</code>, <code>pvp</code>, <code>gym</code>, <code>invasion</code>, <code>lure</code>, <code>nest</code>, and others.</p>
+</details>
+<h3 id="iv-colour-tiers">IV Colour Tiers<a class="headerlink" href="#iv-colour-tiers" title="Permanent link">&para;</a></h3>
+<p>The <code>ivColors</code> array maps six hex colours to IV percentage bands:</p>
+<table>
+<thead>
+<tr>
+<th>Min IV</th>
+<th>Max IV</th>
+<th>Default Colour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0%</td>
+<td>24.9%</td>
+<td><code>#9D9D9D</code> (grey)</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>49.9%</td>
+<td><code>#FFFFFF</code> (white)</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>81.9%</td>
+<td><code>#1EFF00</code> (green)</td>
+</tr>
+<tr>
+<td>82%</td>
+<td>89.9%</td>
+<td><code>#0070DD</code> (blue)</td>
+</tr>
+<tr>
+<td>90%</td>
+<td>99.9%</td>
+<td><code>#A335EE</code> (purple)</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>100%</td>
+<td><code>#FF8000</code> (orange)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="telegram">telegram<a class="headerlink" href="#telegram" title="Permanent link">&para;</a></h2>
+<p>Telegram bot configuration. See also the dedicated <a href="../telegram/">Telegram</a> page for setup instructions.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td><code>false</code></td>
+<td>Whether the Telegram bot is enabled.</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>""</code></td>
+<td>Bot token from <code>@BotFather</code>.</td>
+</tr>
+<tr>
+<td><code>admins</code></td>
+<td><code>[""]</code></td>
+<td>Array of Telegram user IDs with administrator privileges.</td>
+</tr>
+<tr>
+<td><code>delegatedAdministration</code></td>
+<td><code>{}</code></td>
+<td>Grant specific users admin rights over specific groups or channels, same structure as Discord.</td>
+</tr>
+<tr>
+<td><code>channels</code></td>
+<td><code>[""]</code></td>
+<td>Array of Telegram group IDs where users can register. Groups must be supergroups (IDs starting with <code>-100</code>). Not used in area-security mode.</td>
+</tr>
+<tr>
+<td><code>groupWelcomeText</code></td>
+<td><em>(see default.json)</em></td>
+<td>Message posted in the group when a user registers. Supports <code>{user}</code> placeholder.</td>
+</tr>
+<tr>
+<td><code>botWelcomeText</code></td>
+<td><code>"You are now registered with Dexter"</code></td>
+<td>DM sent by the bot when a user registers.</td>
+</tr>
+<tr>
+<td><code>botGoodbyeMessage</code></td>
+<td><code>""</code></td>
+<td>DM sent to a user when they lose access through reconciliation.</td>
+</tr>
+<tr>
+<td><code>unregisteredUserMessage</code></td>
+<td><code>""</code></td>
+<td>Custom reply for unregistered users who message the bot.</td>
+</tr>
+<tr>
+<td><code>unrecognisedCommandMessage</code></td>
+<td><code>""</code></td>
+<td>Custom reply for unrecognised commands.</td>
+</tr>
+<tr>
+<td><code>checkRole</code></td>
+<td><code>false</code></td>
+<td>Periodically verify that all registered Telegram users are still members of a registration group.</td>
+</tr>
+<tr>
+<td><code>checkRoleInterval</code></td>
+<td><code>6</code></td>
+<td>Hours between automated membership checks.</td>
+</tr>
+<tr>
+<td><code>registerOnStart</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, automatically attempt registration when a user sends <code>/start</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="geocoding">geocoding<a class="headerlink" href="#geocoding" title="Permanent link">&para;</a></h2>
+<p>Address lookup, reverse geocoding, and static map image settings. See also <a href="../geocoding/">Geocoding</a> and <a href="../static-maps/">Static Maps</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>provider</code></td>
+<td><code>"none"</code></td>
+<td>Geocoding provider for address lookups. Options: <code>none</code>, <code>nominatim</code> (self-hosted), <code>pelias</code>, <code>google</code>.</td>
+</tr>
+<tr>
+<td><code>providerURL</code></td>
+<td><code>""</code></td>
+<td>URL of the geocoding service (required for <code>nominatim</code> and <code>pelias</code>).</td>
+</tr>
+<tr>
+<td><code>providerKey</code></td>
+<td><code>""</code></td>
+<td>API key for the geocoding provider (e.g. Pelias <code>api_key</code>).</td>
+</tr>
+<tr>
+<td><code>forwardOnly</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, disable reverse geocoding lookups. Only forward (address-to-coordinate) lookups are performed.</td>
+</tr>
+<tr>
+<td><code>peliasLayers</code></td>
+<td><code>""</code></td>
+<td><strong>(Pelias only)</strong> CSV list of layers to request (e.g. <code>venue,address,street</code>).</td>
+</tr>
+<tr>
+<td><code>peliasPreferredLayer</code></td>
+<td><code>""</code></td>
+<td><strong>(Pelias only)</strong> If set, Dexter prefers the first result whose <code>properties.layer</code> matches this value.</td>
+</tr>
+<tr>
+<td><code>peliasResultSize</code></td>
+<td><code>0</code></td>
+<td><strong>(Pelias only)</strong> Number of results to request from Pelias. Increasing helps ensure the preferred layer appears in the result set.</td>
+</tr>
+<tr>
+<td><code>peliasBoundaryCountry</code></td>
+<td><code>""</code></td>
+<td><strong>(Pelias only)</strong> Country code filter for Pelias results (e.g. <code>GB</code>, <code>US</code>).</td>
+</tr>
+<tr>
+<td><code>cacheDetail</code></td>
+<td><code>3</code></td>
+<td>Decimal places of latitude/longitude used for geocoding cache keys. <code>3</code> gives ~110m precision; <code>4</code> gives ~11m.</td>
+</tr>
+<tr>
+<td><code>dayStyle</code></td>
+<td><code>""</code></td>
+<td>Tileserver style name for daytime maps. Use <code>#(style)</code> in DTS templates.</td>
+</tr>
+<tr>
+<td><code>dawnStyle</code></td>
+<td><code>""</code></td>
+<td>Tileserver style name for dawn maps.</td>
+</tr>
+<tr>
+<td><code>duskStyle</code></td>
+<td><code>""</code></td>
+<td>Tileserver style name for dusk maps.</td>
+</tr>
+<tr>
+<td><code>nightStyle</code></td>
+<td><code>""</code></td>
+<td>Tileserver style name for night maps.</td>
+</tr>
+<tr>
+<td><code>intersectionUsers</code></td>
+<td><code>[]</code></td>
+<td>Array of GeoNames usernames for street intersection lookups.</td>
+</tr>
+<tr>
+<td><code>staticProvider</code></td>
+<td><code>"none"</code></td>
+<td>Static map tile provider. Options: <code>none</code>, <code>tileservercache</code>, <code>google</code>, <code>osm</code>, <code>mapbox</code>.</td>
+</tr>
+<tr>
+<td><code>staticProviderURL</code></td>
+<td><code>""</code></td>
+<td>URL of the tile server (required for <code>tileservercache</code>).</td>
+</tr>
+<tr>
+<td><code>tileserverTemplatePrefix</code></td>
+<td><code>"dexter-"</code></td>
+<td>Prefix for tileservercache template names (e.g. <code>dexter-monster</code>, <code>dexter-raid</code>). Set to <code>"poracle-"</code> for backwards compatibility with existing tileservercache setups.</td>
+</tr>
+<tr>
+<td><code>tileserverTemplates</code></td>
+<td><code>{}</code></td>
+<td>Per-type overrides for tileservercache template names. When set, the value is used as the full template name (no prefix applied). E.g. <code>{ "monster": "my-custom-monster" }</code>.</td>
+</tr>
+<tr>
+<td><code>geocodingKey</code></td>
+<td><code>[""]</code></td>
+<td>Array of Google API keys for geocoding. Dexter rotates through them.</td>
+</tr>
+<tr>
+<td><code>staticKey</code></td>
+<td><code>[""]</code></td>
+<td>Array of API keys for the static map provider (<code>google</code>, <code>osm</code>, <code>mapbox</code>).</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>320</code></td>
+<td>Static map image width in pixels (non-tileservercache providers).</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>200</code></td>
+<td>Static map image height in pixels (non-tileservercache providers).</td>
+</tr>
+<tr>
+<td><code>zoom</code></td>
+<td><code>15</code></td>
+<td>Static map zoom level (non-tileservercache providers).</td>
+</tr>
+<tr>
+<td><code>spriteHeight</code></td>
+<td><code>20</code></td>
+<td>Pokemon icon height on the static map in pixels.</td>
+</tr>
+<tr>
+<td><code>spriteWidth</code></td>
+<td><code>20</code></td>
+<td>Pokemon icon width on the static map in pixels.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>2</code></td>
+<td>Static map scale factor.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>"klokantech-basic"</code></td>
+<td>Map style type (non-tileservercache providers).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tileserversettings">tileserverSettings<a class="headerlink" href="#tileserversettings" title="Permanent link">&para;</a></h3>
+<p>The <code>tileserverSettings</code> object within <code>geocoding</code> controls per-type settings for tileservercache:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default.type</code></td>
+<td><code>"staticMap"</code></td>
+<td>Tile request type. Can be <code>staticMap</code> or <code>multiStaticMap</code>.</td>
+</tr>
+<tr>
+<td><code>default.width</code></td>
+<td><code>500</code></td>
+<td>Image width in pixels.</td>
+</tr>
+<tr>
+<td><code>default.height</code></td>
+<td><code>250</code></td>
+<td>Image height in pixels.</td>
+</tr>
+<tr>
+<td><code>default.zoom</code></td>
+<td><code>15</code></td>
+<td>Map zoom level.</td>
+</tr>
+<tr>
+<td><code>default.pregenerate</code></td>
+<td><code>true</code></td>
+<td>Whether to pregenerate the tile.</td>
+</tr>
+<tr>
+<td><code>default.includeStops</code></td>
+<td><code>false</code></td>
+<td>Whether to include Pokestops on the map.</td>
+</tr>
+</tbody>
+</table>
+<p>You can add per-type overrides using keys like <code>monster</code>, <code>raid</code>, <code>pokestop</code>, <code>quest</code>, <code>weather</code>, <code>location</code>, <code>nest</code>, <code>gym</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;tileserverSettings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;staticMap&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;zoom&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;pregenerate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&quot;includeStops&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">&quot;monster&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;staticMap&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">&quot;includeStops&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="tracking">tracking<a class="headerlink" href="#tracking" title="Permanent link">&para;</a></h2>
+<p>Restrictions and defaults for user tracking commands.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>everythingFlagPermissions</code></td>
+<td><code>"allow-any"</code></td>
+<td>Controls the <code>everything</code> keyword on <code>!track</code>. <code>"allow-any"</code> -- unrestricted, stored as a wildcard. <code>"allow-and-always-individually"</code> -- allowed but stored as individual rows per Pokemon. <code>"allow-and-ignore-individually"</code> -- allowed, but users cannot opt for individual rows. <code>"deny"</code> -- users must track Pokemon individually.</td>
+</tr>
+<tr>
+<td><code>defaultDistance</code></td>
+<td><code>0</code></td>
+<td>Default tracking radius in metres when no distance is specified. Useful for distance-only setups with no area fences.</td>
+</tr>
+<tr>
+<td><code>maxDistance</code></td>
+<td><code>0</code></td>
+<td>Maximum tracking radius users can set, in metres. <code>0</code> means no limit.</td>
+</tr>
+<tr>
+<td><code>enableGymBattle</code></td>
+<td><code>false</code></td>
+<td>Allow users to use the <code>battle_changes</code> option in <code>!gym</code> tracking.</td>
+</tr>
+<tr>
+<td><code>defaultUserTrackingLevelCap</code></td>
+<td><code>0</code></td>
+<td>Default PvP level cap for new users. <code>0</code> means all levels are considered.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pvp">pvp<a class="headerlink" href="#pvp" title="Permanent link">&para;</a></h2>
+<p>PvP rank calculation and display settings. See also <a href="../pvp/">PvP Tracking</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataSource</code></td>
+<td><code>"internal"</code></td>
+<td>Source of PvP rank data. <code>"internal"</code> uses Dexter's built-in calculator; <code>"webhook"</code> uses ranks provided by the scanner webhook.</td>
+</tr>
+<tr>
+<td><code>levelCaps</code></td>
+<td><code>[50]</code></td>
+<td>Level caps included in internal rank calculations. E.g. <code>[50, 51]</code> to include best-buddy levels.</td>
+</tr>
+<tr>
+<td><code>includeMegaEvolution</code></td>
+<td><code>false</code></td>
+<td>Whether mega evolutions are included in internal rank calculations.</td>
+</tr>
+<tr>
+<td><code>littleLeagueCanEvolve</code></td>
+<td><code>false</code></td>
+<td>Whether Pokemon that can still evolve are included in Little League calculations.</td>
+</tr>
+<tr>
+<td><code>pvpEvolutionDirectTracking</code></td>
+<td><code>false</code></td>
+<td>Allow users to track PvP evolutions directly (e.g. tracking Vaporeon would match an Eevee that ranks well as Vaporeon).</td>
+</tr>
+<tr>
+<td><code>filterByTrack</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, PvP listings are automatically filtered by the user's tracking requirements.</td>
+</tr>
+<tr>
+<td><code>pvpDisplayMaxRank</code></td>
+<td><code>10</code></td>
+<td>Maximum PvP rank shown in alert messages. Passed into DTS as a variable.</td>
+</tr>
+<tr>
+<td><code>pvpDisplayGreatMinCP</code></td>
+<td><code>1400</code></td>
+<td>Minimum CP shown for Great League PvP results in alerts.</td>
+</tr>
+<tr>
+<td><code>pvpDisplayUltraMinCP</code></td>
+<td><code>2350</code></td>
+<td>Minimum CP shown for Ultra League PvP results in alerts.</td>
+</tr>
+<tr>
+<td><code>pvpDisplayLittleMinCP</code></td>
+<td><code>450</code></td>
+<td>Minimum CP shown for Little League PvP results in alerts.</td>
+</tr>
+<tr>
+<td><code>pvpFilterMaxRank</code></td>
+<td><code>10</code></td>
+<td>Maximum rank users can set on <code>!track</code> PvP filters. Prevents excessively broad tracking.</td>
+</tr>
+<tr>
+<td><code>pvpFilterGreatMinCP</code></td>
+<td><code>1400</code></td>
+<td>Minimum CP floor enforced on user Great League tracking requests.</td>
+</tr>
+<tr>
+<td><code>pvpFilterUltraMinCP</code></td>
+<td><code>2350</code></td>
+<td>Minimum CP floor enforced on user Ultra League tracking requests.</td>
+</tr>
+<tr>
+<td><code>pvpFilterLittleMinCP</code></td>
+<td><code>450</code></td>
+<td>Minimum CP floor enforced on user Little League tracking requests.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="stats">stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h2>
+<p>Pokemon rarity statistics calculation.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxPokemonId</code></td>
+<td><code>1010</code></td>
+<td>Highest Pokemon ID to consider in stats calculations.</td>
+</tr>
+<tr>
+<td><code>minSampleSize</code></td>
+<td><code>10000</code></td>
+<td>Minimum number of Pokemon observations required before broadcasting rarity stats.</td>
+</tr>
+<tr>
+<td><code>pokemonCountToKeep</code></td>
+<td><code>8</code></td>
+<td>Rolling window in hours used for rarity calculations.</td>
+</tr>
+<tr>
+<td><code>rarityRefreshInterval</code></td>
+<td><code>5</code></td>
+<td>Minutes between rarity stat recalculations.</td>
+</tr>
+<tr>
+<td><code>rarityGroup2Uncommon</code></td>
+<td><code>1</code></td>
+<td>Percentage threshold (of total seen) below which a Pokemon is classified as Uncommon.</td>
+</tr>
+<tr>
+<td><code>rarityGroup3Rare</code></td>
+<td><code>0.5</code></td>
+<td>Percentage threshold for the Rare classification.</td>
+</tr>
+<tr>
+<td><code>rarityGroup4VeryRare</code></td>
+<td><code>0.03</code></td>
+<td>Percentage threshold for the Very Rare classification.</td>
+</tr>
+<tr>
+<td><code>rarityGroup5UltraRare</code></td>
+<td><code>0.01</code></td>
+<td>Percentage threshold for the Ultra Rare classification.</td>
+</tr>
+<tr>
+<td><code>excludeFromRare</code></td>
+<td><em>(large array)</em></td>
+<td>Array of Pokemon IDs excluded from Rare / Very Rare / Ultra Rare classifications. Typically common species that should never appear as rare even during low-spawn periods.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tuning">tuning<a class="headerlink" href="#tuning" title="Permanent link">&para;</a></h2>
+<p>Internal performance parameters. Change these carefully -- discuss in the Dexter Discord before adjusting.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Increasing these values beyond recommended ranges can cause rate-limiting, excessive memory usage, or database connection exhaustion. Adjust incrementally.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fastMonsters</code></td>
+<td><code>true</code></td>
+<td>Use in-memory Pokemon matching to eliminate SQL lookups. Faster but uses more RAM.</td>
+</tr>
+<tr>
+<td><code>disablePokemonCache</code></td>
+<td><code>true</code></td>
+<td>When <code>true</code>, disable the in-memory Pokemon cache, significantly reducing memory usage.</td>
+</tr>
+<tr>
+<td><code>maxDatabaseConnections</code></td>
+<td><code>15</code></td>
+<td>Maximum database connections per worker thread.</td>
+</tr>
+<tr>
+<td><code>webhookProcessingWorkers</code></td>
+<td><code>5</code></td>
+<td>Number of threads for inbound webhook processing. Five is sufficient for very large systems; going higher is likely counterproductive.</td>
+</tr>
+<tr>
+<td><code>concurrentWebhookProcessorsPerWorker</code></td>
+<td><code>4</code></td>
+<td>Concurrent webhooks processed per worker. Each requires a database connection, so keep this below <code>maxDatabaseConnections</code>.</td>
+</tr>
+<tr>
+<td><code>concurrentDiscordDestinationsPerBot</code></td>
+<td><code>10</code></td>
+<td>Concurrent outbound Discord messages per bot. Discord rate-limits by route and globally.</td>
+</tr>
+<tr>
+<td><code>concurrentTelegramDestinationsPerBot</code></td>
+<td><code>10</code></td>
+<td>Concurrent outbound Telegram messages per bot.</td>
+</tr>
+<tr>
+<td><code>concurrentDiscordWebhookConnections</code></td>
+<td><code>10</code></td>
+<td>Concurrent outbound Discord webhook connections.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="logger">logger<a class="headerlink" href="#logger" title="Permanent link">&para;</a></h2>
+<p>Logging configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>consoleLogLevel</code></td>
+<td><code>"verbose"</code></td>
+<td>Log level for console output (and pm2/systemd journals). Options: <code>silly</code>, <code>debug</code>, <code>verbose</code>, <code>info</code>, <code>warn</code>.</td>
+</tr>
+<tr>
+<td><code>logLevel</code></td>
+<td><code>"verbose"</code></td>
+<td>Log level for on-disk log files.</td>
+</tr>
+<tr>
+<td><code>enableLogs.webhooks</code></td>
+<td><code>false</code></td>
+<td>Enable hourly webhook log files. These can grow very large.</td>
+</tr>
+<tr>
+<td><code>enableLogs.discord</code></td>
+<td><code>true</code></td>
+<td>Enable logging of outbound Discord messages.</td>
+</tr>
+<tr>
+<td><code>enableLogs.telegram</code></td>
+<td><code>true</code></td>
+<td>Enable logging of outbound Telegram messages.</td>
+</tr>
+<tr>
+<td><code>enableLogs.pvp</code></td>
+<td><code>false</code></td>
+<td>Enable detailed PvP calculation logging at the <code>verbose</code> level.</td>
+</tr>
+<tr>
+<td><code>timingStats</code></td>
+<td><code>false</code></td>
+<td>Promote key timing statistics from <code>debug</code> to <code>verbose</code> level for easier observation.</td>
+</tr>
+<tr>
+<td><code>dailyLogLimit</code></td>
+<td><code>7</code></td>
+<td>Number of days to retain daily log files (everything except webhook logs).</td>
+</tr>
+<tr>
+<td><code>webhookLogLimit</code></td>
+<td><code>12</code></td>
+<td>Number of hours to retain webhook log files, if enabled.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start with <code>verbose</code> and drop to <code>info</code> once everything is stable. Switch to <code>debug</code> when troubleshooting specific issues.</p>
+</div>
+<hr />
+<h2 id="locale">locale<a class="headerlink" href="#locale" title="Permanent link">&para;</a></h2>
+<p>Date, time, and address formatting.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>timeformat</code></td>
+<td><code>"en-gb"</code></td>
+<td>Locale string used for time display (e.g. <code>en-gb</code>, <code>en-us</code>, <code>de</code>).</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td><code>"LTS"</code></td>
+<td>Time format token. See Moment.js locale-aware formats.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>"L"</code></td>
+<td>Date format token. See Moment.js locale-aware formats.</td>
+</tr>
+<tr>
+<td><code>addressFormat</code></td>
+<td><code>"{{{streetName}}} {{streetNumber}}"</code></td>
+<td>Handlebars template for the <code>{{addr}}</code> DTS placeholder. Available fields depend on your geocoding provider.</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>"en"</code></td>
+<td>Secondary language used for <code>{{translateAlt}}</code> in DTS. Useful for retrieving English-language names for web links even when the primary locale is another language.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="geofence">geofence<a class="headerlink" href="#geofence" title="Permanent link">&para;</a></h2>
+<p>Geofence file and Koji integration.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td><code>"./config/geofence.json"</code></td>
+<td>Path to the geofence file. Supports the format created by <a href="http://geo.jasparke.net/">geo.jasparke.net</a> or standard GeoJSON.</td>
+</tr>
+<tr>
+<td><code>defaultGeofenceName</code></td>
+<td><code>"city"</code></td>
+<td>Fallback fence name used when a GeoJSON feature has no <code>name</code> property.</td>
+</tr>
+<tr>
+<td><code>defaultGeofenceColor</code></td>
+<td><code>"#3399ff"</code></td>
+<td>Default colour for geofence display.</td>
+</tr>
+<tr>
+<td><code>kojiOptions.bearerToken</code></td>
+<td><code>""</code></td>
+<td>Bearer token for Koji geofence integration. Leave blank to disable.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="weather">weather<a class="headerlink" href="#weather" title="Permanent link">&para;</a></h2>
+<p>Weather change alerts and AccuWeather forecast integration. See also <a href="../weather-forecast/">Weather Forecast</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>weatherChangeAlert</code></td>
+<td><code>false</code></td>
+<td>Enable alerts when a weather change affects a tracked Pokemon's weather boost.</td>
+</tr>
+<tr>
+<td><code>showAlteredPokemon</code></td>
+<td><code>false</code></td>
+<td>Include weather-affected Pokemon details in weather-change DTS.</td>
+</tr>
+<tr>
+<td><code>showAlteredPokemonStaticMap</code></td>
+<td><code>false</code></td>
+<td>Show weather-affected Pokemon on the static map image.</td>
+</tr>
+<tr>
+<td><code>showAlteredPokemonMaxCount</code></td>
+<td><code>10</code></td>
+<td>Maximum number of affected Pokemon listed per weather-change alert.</td>
+</tr>
+<tr>
+<td><code>enableWeatherForecast</code></td>
+<td><code>false</code></td>
+<td>Enable AccuWeather-based weather forecasting.</td>
+</tr>
+<tr>
+<td><code>apiKeyAccuWeather</code></td>
+<td><code>[""]</code></td>
+<td>Array of AccuWeather API keys. Dexter rotates through them to stay within quotas.</td>
+</tr>
+<tr>
+<td><code>apiKeyDayQuota</code></td>
+<td><code>50</code></td>
+<td>Maximum API calls allowed per key per day.</td>
+</tr>
+<tr>
+<td><code>smartForecast</code></td>
+<td><code>false</code></td>
+<td>Pull forecast data on-demand when no data exists for a cell, instead of waiting for the next refresh cycle.</td>
+</tr>
+<tr>
+<td><code>localFirstFetchHOD</code></td>
+<td><code>3</code></td>
+<td>Hour of the day (local time) for the first scheduled forecast fetch. <code>3</code> (3 AM) is recommended.</td>
+</tr>
+<tr>
+<td><code>forecastRefreshInterval</code></td>
+<td><code>8</code></td>
+<td>Hours between scheduled forecast API calls.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="alertlimits">alertLimits<a class="headerlink" href="#alertlimits" title="Permanent link">&para;</a></h2>
+<p>Rate-limiting to prevent individual users or channels from overwhelming the system.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>timingPeriod</code></td>
+<td><code>240</code></td>
+<td>Rolling window in seconds over which message limits are calculated.</td>
+</tr>
+<tr>
+<td><code>dmLimit</code></td>
+<td><code>20</code></td>
+<td>Maximum messages a single user can receive within <code>timingPeriod</code>.</td>
+</tr>
+<tr>
+<td><code>channelLimit</code></td>
+<td><code>40</code></td>
+<td>Maximum messages a channel or group can receive within <code>timingPeriod</code>.</td>
+</tr>
+<tr>
+<td><code>maxLimitsBeforeStop</code></td>
+<td><code>10</code></td>
+<td>Number of times a user can hit the rate limit within 24 hours before being stopped.</td>
+</tr>
+<tr>
+<td><code>disableOnStop</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, admin-disable the user when stopped (requiring admin intervention to re-enable) rather than a soft stop.</td>
+</tr>
+<tr>
+<td><code>shameChannel</code></td>
+<td><code>""</code></td>
+<td>Discord channel ID where stopped/disabled users are announced.</td>
+</tr>
+<tr>
+<td><code>limitOverride</code></td>
+<td><code>{}</code></td>
+<td>Per-target limit overrides. Keys are channel IDs, user IDs, or webhook names; values are the custom limit number.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>Limit Override</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;limitOverride&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;123456789012345678&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;my-webhook-name&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="areasecurity">areaSecurity<a class="headerlink" href="#areasecurity" title="Permanent link">&para;</a></h2>
+<p>Community-based access controls that restrict which areas users can track based on their roles or group membership. See also <a href="../area-security/">Area Security</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td><code>false</code></td>
+<td>Enable area security. When active, this overrides <code>discord.channels</code>, <code>discord.userRole</code>, and <code>telegram.channels</code>.</td>
+</tr>
+<tr>
+<td><code>strictLocations</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, verify that every alert originates from within the community's <code>locationFence</code>, not just the user's tracked areas.</td>
+</tr>
+<tr>
+<td><code>communities</code></td>
+<td><code>{}</code></td>
+<td>Map of community definitions. See example below.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>Community Configuration</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;communities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;newyork&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;allowedAreas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;manhattan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bronx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;brooklyn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;queens&quot;</span><span class="p">],</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;locationFence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wholenewyork&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;discord&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="nt">&quot;channels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;channel-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nt">&quot;userRole&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;role-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">&quot;telegram&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nt">&quot;channels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;group-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">&quot;chicago&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nt">&quot;allowedAreas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;northwest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;southside&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;central&quot;</span><span class="p">],</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">&quot;locationFence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wholechicago&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nt">&quot;discord&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">      </span><span class="nt">&quot;channels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;channel-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">      </span><span class="nt">&quot;userRole&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;role-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="nt">&quot;telegram&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">      </span><span class="nt">&quot;channels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;group-id&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">}</span>
+</code></pre></div>
+</details>
+<p>Each community defines:</p>
+<ul>
+<li><strong><code>allowedAreas</code></strong> -- array of geofence names the community's users may add with <code>!area add</code>.</li>
+<li><strong><code>locationFence</code></strong> -- the single geofence used for <code>strictLocations</code> checks.</li>
+<li><strong><code>discord</code></strong> -- <code>channels</code> (registration channel IDs) and <code>userRole</code> (qualifying role IDs).</li>
+<li><strong><code>telegram</code></strong> -- <code>channels</code> (registration group IDs).</li>
+</ul>
+<hr />
+<h2 id="reconciliation">reconciliation<a class="headerlink" href="#reconciliation" title="Permanent link">&para;</a></h2>
+<p>Automated user and channel reconciliation settings. The periodic check only runs if <code>checkRole</code> is enabled in the <code>discord</code> or <code>telegram</code> section. These settings also apply when role changes are observed in real time on Discord.</p>
+<h3 id="reconciliationdiscord">reconciliation.discord<a class="headerlink" href="#reconciliationdiscord" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>updateUserNames</code></td>
+<td><code>false</code></td>
+<td>Follow Discord username changes and update the database.</td>
+</tr>
+<tr>
+<td><code>removeInvalidUsers</code></td>
+<td><code>true</code></td>
+<td>De-register users who lose their qualifying role during a role check.</td>
+</tr>
+<tr>
+<td><code>registerNewUsers</code></td>
+<td><code>false</code></td>
+<td>Automatically register users who gain a qualifying role during a role check.</td>
+</tr>
+<tr>
+<td><code>updateChannelNames</code></td>
+<td><code>true</code></td>
+<td>Keep channel names in the database synchronised with Discord.</td>
+</tr>
+<tr>
+<td><code>updateChannelNotes</code></td>
+<td><code>false</code></td>
+<td>Update channel notes in the database with guild name and category.</td>
+</tr>
+<tr>
+<td><code>unregisterMissingChannels</code></td>
+<td><code>false</code></td>
+<td>Remove channels from the database when they are deleted from Discord.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reconciliationtelegram">reconciliation.telegram<a class="headerlink" href="#reconciliationtelegram" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>updateUserNames</code></td>
+<td><code>false</code></td>
+<td>Follow Telegram username changes and update the database.</td>
+</tr>
+<tr>
+<td><code>removeInvalidUsers</code></td>
+<td><code>true</code></td>
+<td>Remove users who are no longer members of a registration group.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fallbacks">fallbacks<a class="headerlink" href="#fallbacks" title="Permanent link">&para;</a></h2>
+<p>Fallback image URLs used when the primary image source fails.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>staticMap</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback image when static map generation fails.</td>
+</tr>
+<tr>
+<td><code>imgUrl</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback Pokemon icon.</td>
+</tr>
+<tr>
+<td><code>imgUrlWeather</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback weather icon.</td>
+</tr>
+<tr>
+<td><code>imgUrlEgg</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback egg icon.</td>
+</tr>
+<tr>
+<td><code>imgUrlGym</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback gym icon.</td>
+</tr>
+<tr>
+<td><code>imgUrlPokestop</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback Pokestop icon.</td>
+</tr>
+<tr>
+<td><code>imgUrlStation</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback station icon.</td>
+</tr>
+<tr>
+<td><code>pokestopUrl</code></td>
+<td><em>(GitHub URL)</em></td>
+<td>Fallback Pokestop URL used in quest alerts.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
